@@ -1,0 +1,11 @@
+<!-- src\app\shared\components\sidenav\sidenav.component.html -->
+
+<mat-toolbar [color]="themeColor">
+  Toolbar
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened> Sidenav content</mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
