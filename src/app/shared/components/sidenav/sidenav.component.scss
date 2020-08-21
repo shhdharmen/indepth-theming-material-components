@@ -1,5 +1,23 @@
 // src\app\shared\components\sidenav\sidenav.component.scss
 
 .example-container {
-  height: 500px;
+  height: calc(100vh - 64px);
+  .mat-sidenav {
+    padding: 8px;
+    min-width: 300px;
+  }
+  .mat-sidenav-content {
+    height: calc(100vh - 64px);
+  }
+}
+.menu-button {
+  text-transform: capitalize;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-icon-no-color {
+  color: rbga(0, 0, 0, 0.54);
 }

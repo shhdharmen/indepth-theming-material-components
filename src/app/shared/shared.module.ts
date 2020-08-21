@@ -2,12 +2,12 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CustomMaterialModule } from '../custom-material/custom-material.module';
+import { MaterialModule } from '../material/material.module';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [SidenavComponent],
-  imports: [CommonModule, CustomMaterialModule],
+  imports: [CommonModule, MaterialModule],
   exports: [SidenavComponent],
 })
 export class SharedModule {}
