@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   exports: [
@@ -24,6 +25,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatTooltipModule,
     MatMenuModule,
     MatBadgeModule,
+    MatListModule
   ],
 })
 export class MaterialModule {}
