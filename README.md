@@ -1,5 +1,7 @@
 # Custom Theme for Angular Material Components Series
 
+![](https://res.cloudinary.com/indepth-dev/image/fetch/w_1000,f_auto/https://admin.indepth.dev/content/images/2020/08/Custom-Theme-for-Angular-Material-Components-Series_-Part-1---Create-a-Theme.png )
+
 ## Context
 
 In this series, I will write about creating and applying Custom Theme to different Angular Material Components.
