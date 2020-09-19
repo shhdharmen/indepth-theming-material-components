@@ -37,7 +37,7 @@
     </mat-menu>
   </mat-toolbar>
   <mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav mode="side" opened>
+    <mat-sidenav #sidenav mode="side" opened [attr.color]="themeColor">
       <mat-nav-list>
         <h1>Sidenav</h1>
         <a mat-list-item href="#">Link 1</a>
@@ -46,7 +46,7 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <ng-content></ng-content>
+      <ng-content []></ng-content>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

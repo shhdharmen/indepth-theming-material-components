@@ -3,5 +3,13 @@
 // import custom components themes
 
 // you only have to add additional components here (instead of in every theme class)
-@mixin custom-components-theme($theme) {
+
+@import "./app/shared/components/sidenav/sidenav.component.scss-theme.scss";
+@import "./app/shared/components/dialog/dialog.component.scss-theme.scss";
+@import "./app/shared/services/notification.scss-theme.scss";
+
+@mixin custom-components-theme($theme, $notifications-theme) {
+  @include sidenav-component-theme($theme);
+  @include dialog-component-theme($theme);
+  @include notification-theme($notifications-theme);
 }

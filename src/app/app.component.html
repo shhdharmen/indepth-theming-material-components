@@ -1,6 +1,6 @@
 <!-- src\app\app.component.html -->
 
-<app-sidenav>
+<app-sidenav #sidenav>
   <div class="container">
     <h1 class="mat-display-3">Main Content</h1>
     <p>
@@ -8,5 +8,8 @@
       Consequatur qui fugit facilis reiciendis deserunt, debitis beatae! Illo dolorem asperiores nisi excepturi eum
       veritatis cupiditate.
     </p>
+    <button mat-raised-button [color]="sidenav.themeColor" (click)="openDialog(sidenav.themeColor)">Open Dialog</button>
+    &nbsp;
+    <button mat-raised-button [color]="sidenav.themeColor" (click)="openNotification()">Open Notification</button>
   </div>
 </app-sidenav>

@@ -23,7 +23,7 @@
 // that you are using.
 
 @include angular-material-theme($theming-material-components-theme);  // 👈 changed
-@include custom-components-theme($theming-material-components-theme); // 👈 changed
+@include custom-components-theme($theming-material-components-theme, $notifications-theme); // 👈 changed
 
 // 👇 added
 
@@ -33,6 +33,7 @@
 
 .dark-theme {
   @include angular-material-color($dark-theme);
+  @include custom-components-theme($dark-theme, $notifications-theme); // 👈 added
 }
 
 // Override typography for all Angular Material, including mat-base-typography and all components.
