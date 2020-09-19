@@ -9,68 +9,44 @@ import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 export class NotificationService {
   constructor(private readonly snackBar: MatSnackBar) {}
 
-  default(message: string, isHandset?: boolean): void {
-    this.show(
-      message,
-      {
-        duration: 2000,
-        panelClass: 'default-notification-overlay',
-      },
-      isHandset
-    );
+  default(message: string): void {
+    this.show(message, {
+      duration: 2000,
+      panelClass: 'default-notification-overlay',
+    });
   }
 
-  info(message: string, isHandset?: boolean): void {
-    this.show(
-      message,
-      {
-        duration: 2000,
-        panelClass: 'info-notification-overlay',
-      },
-      isHandset
-    );
+  info(message: string): void {
+    this.show(message, {
+      duration: 2000,
+      panelClass: 'info-notification-overlay',
+    });
   }
 
-  success(message: string, isHandset?: boolean): void {
-    this.show(
-      message,
-      {
-        duration: 2000,
-        panelClass: 'success-notification-overlay',
-      },
-      isHandset
-    );
+  success(message: string): void {
+    this.show(message, {
+      duration: 2000,
+      panelClass: 'success-notification-overlay',
+    });
   }
 
-  warn(message: string, isHandset?: boolean): void {
-    this.show(
-      message,
-      {
-        duration: 2500,
-        panelClass: 'warning-notification-overlay',
-      },
-      isHandset
-    );
+  warn(message: string): void {
+    this.show(message, {
+      duration: 2500,
+      panelClass: 'warning-notification-overlay',
+    });
   }
 
-  error(message: string, isHandset?: boolean): void {
-    this.show(
-      message,
-      {
-        duration: 3000,
-        panelClass: 'error-notification-overlay',
-      },
-      isHandset
-    );
+  error(message: string): void {
+    this.show(message, {
+      duration: 3000,
+      panelClass: 'error-notification-overlay',
+    });
   }
 
-  private show(message: string, configuration: MatSnackBarConfig, isHandset?: boolean): void {
-    // If desktop, move it to top-right
-    if (!isHandset) {
-      configuration.horizontalPosition = 'right';
-      configuration.verticalPosition = 'top';
-    }
-
+  private show(message: string, configuration: MatSnackBarConfig): void {
+    configuration.horizontalPosition = 'right';
+    configuration.verticalPosition = 'top';
     this.snackBar.open(message, null, configuration);
   }
 }
