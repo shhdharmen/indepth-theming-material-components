@@ -1,5 +1,5 @@
 // src\app\shared\components\dialog\dialog.component.scss-theme.scss
-@use "~@angular/material" as mat;
+@use "@angular/material" as mat;
 @use "sass:map";
 
 @mixin dialog-component-theme($config-or-theme) {

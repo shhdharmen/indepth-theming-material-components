@@ -1,5 +1,5 @@
 // src\app\shared\components\sidenav\sidenav.component.scss-theme.scss
-@use "~@angular/material" as mat;
+@use "@angular/material" as mat;
 @use "sass:map";
 
 @mixin sidenav-component-theme($config-or-theme) {
