@@ -1,15 +1,16 @@
 // src/theme.scss
+@use '~@angular/material' as mat;
 
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap");
 
 // primary, accent and warn palettes
 
-$theming-material-components-primary: mat-palette($mat-indigo);
-$theming-material-components-accent: mat-palette($mat-pink, A200, A100, A400);
-$theming-material-components-warn: mat-palette($mat-red);
+$theming-material-components-primary: mat.define-palette(mat.$indigo-palette);
+$theming-material-components-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$theming-material-components-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$theming-material-components-theme: mat-light-theme(
+$theming-material-components-theme: mat.define-light-theme(
   $theming-material-components-primary,
   $theming-material-components-accent,
   $theming-material-components-warn
@@ -17,20 +18,20 @@ $theming-material-components-theme: mat-light-theme(
 
 // Define  a custom typography config
 $heading-font-family: "'Work Sans', sans-serif";
-$typography: mat-typography-config(
-  $display-4: mat-typography-level(112px, $font-family: $heading-font-family),
-  $display-3: mat-typography-level(56px, $font-family: $heading-font-family),
-  $display-2: mat-typography-level(45px, $font-family: $heading-font-family),
-  $display-1: mat-typography-level(34px, $font-family: $heading-font-family),
-  $headline: mat-typography-level(24px, $font-family: $heading-font-family),
-  $title: mat-typography-level(20px, $font-family: $heading-font-family),
+$typography: mat.define-typography-config(
+  $display-4: mat.define-typography-level(112px, $font-family: $heading-font-family),
+  $display-3: mat.define-typography-level(56px, $font-family: $heading-font-family),
+  $display-2: mat.define-typography-level(45px, $font-family: $heading-font-family),
+  $display-1: mat.define-typography-level(34px, $font-family: $heading-font-family),
+  $headline: mat.define-typography-level(24px, $font-family: $heading-font-family),
+  $title: mat.define-typography-level(20px, $font-family: $heading-font-family),
 );
 
 // Define an alternate dark theme.
-$dark-primary: mat-palette($mat-blue-grey);
-$dark-accent: mat-palette($mat-amber, A200, A100, A400);
-$dark-warn: mat-palette($mat-deep-orange);
-$dark-theme: mat-dark-theme(
+$dark-primary: mat.define-palette(mat.$blue-grey-palette);
+$dark-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+$dark-warn: mat.define-palette(mat.$deep-orange-palette);
+$dark-theme: mat.define-dark-theme(
   (
     color: (
       primary: $dark-primary,
@@ -43,8 +44,8 @@ $dark-theme: mat-dark-theme(
 // Theme for notifications / snackbar
 $notifications-theme: (
   default: #fff,
-  info: mat-color(mat-palette($mat-blue), 400),
-  success: mat-color(mat-palette($mat-green), 400),
-  warning: mat-color(mat-palette($mat-yellow), 400),
-  error: mat-color(mat-palette($mat-red), 400),
+  info: mat.get-color-from-palette(mat.define-palette(mat.$blue-palette), 400),
+  success: mat.get-color-from-palette(mat.define-palette(mat.$green-palette), 400),
+  warning: mat.get-color-from-palette(mat.define-palette(mat.$yellow-palette), 400),
+  error: mat.get-color-from-palette(mat.define-palette(mat.$red-palette), 400),
 );

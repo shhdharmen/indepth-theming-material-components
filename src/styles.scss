@@ -1,16 +1,16 @@
 // src\styles.scss
+@use '~@angular/material' as mat;
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 
-@import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 
-@include mat-core();
+@include mat.core();
 
 // import our custom theme                // 👈 changed
 @import "./theme.scss";                   // 👈 changed
@@ -22,7 +22,7 @@
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 
-@include angular-material-theme($theming-material-components-theme);  // 👈 changed
+@include mat.all-component-themes($theming-material-components-theme);  // 👈 changed
 @include custom-components-theme($theming-material-components-theme, $notifications-theme); // 👈 changed
 
 // 👇 added
@@ -32,12 +32,12 @@
 // `.dark-theme` will be affected by this alternate dark theme instead of the default theme.
 
 .dark-theme {
-  @include angular-material-color($dark-theme);
+  @include mat.all-component-colors($dark-theme);
   @include custom-components-theme($dark-theme, $notifications-theme); // 👈 added
 }
 
 // Override typography for all Angular Material, including mat-base-typography and all components.
-@include angular-material-typography($typography);
+@include mat.all-component-typographies($typography);
 
 // 👆 added
 

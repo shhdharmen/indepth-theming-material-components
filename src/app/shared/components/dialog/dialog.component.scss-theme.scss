@@ -1,15 +1,16 @@
 // src\app\shared\components\dialog\dialog.component.scss-theme.scss
+@use "~@angular/material" as mat;
+@use "sass:map";
 
-@import "~@angular/material/theming";
 @mixin dialog-component-theme($config-or-theme) {
   // retrieve variables from theme
   // (all possible variables, use only what you really need)
-  $config: mat-get-color-config($config-or-theme);
-  $primary: map-get($config, primary);
-  $accent: map-get($config, accent);
-  $warn: map-get($config, warn);
-  $foreground: map-get($config, foreground);
-  $background: map-get($config, background);
+  $config: mat.get-color-config($config-or-theme);
+  $primary: map.get($config, primary);
+  $accent: map.get($config, accent);
+  $warn: map.get($config, warn);
+  $foreground: map.get($config, foreground);
+  $background: map.get($config, background);
   .custom-dialog {
     .mat-dialog-container {
       padding-top: 0px;
@@ -20,8 +21,8 @@
         margin-right: -24px;
 
         // let's take mat-toolbar's default theme
-        background-color: mat-color($background, app-bar);
-        color: mat-color($foreground, text);
+        background-color: mat.get-color-from-palette($background, app-bar);
+        color: mat.get-color-from-palette($foreground, text);
 
         // now, mat-toolbar's colored themes
         $color-list: (
@@ -31,7 +32,8 @@
         );
         @each $key, $val in $color-list {
           &[color="#{$key}"] {
-            @include _mat-toolbar-color($val);
+            background-color: mat.get-color-from-palette($val);
+            color: mat.get-color-from-palette($val, default-contrast);
           }
         }
       }
